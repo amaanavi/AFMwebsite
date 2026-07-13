@@ -78,7 +78,6 @@ export const experience = [
       "Co-founded a legal services startup partnering with law firms to deliver affordable, on-call legal advice to student-founded startups.",
       "Sourced and advised 20+ companies on Employee Retention Credit and CARES Act applications via partner law firms, generating $3M+ in client funding and $300K+ in revenue.",
       "Led all client relationships as primary liaison between founders, clients, and partner law firms.",
-      "Currently partnering with private and college/university start-up networks to connect early-stage companies with trusted legal and strategic resources.",
     ],
   },
   {
