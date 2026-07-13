@@ -73,7 +73,7 @@ export const experience = [
     org: "Office of Rebates and Grants",
     role: "Co-Founder (CEO 01/2023–05/2025)",
     location: "New York, NY",
-    period: "01/2023 – Present",
+    period: "01/2023 – 01/2025",
     bullets: [
       "Co-founded a legal services startup partnering with law firms to deliver affordable, on-call legal advice to student-founded startups.",
       "Sourced and advised 20+ companies on Employee Retention Credit and CARES Act applications via partner law firms, generating $3M+ in client funding and $300K+ in revenue.",

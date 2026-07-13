@@ -117,9 +117,11 @@ export default function Home() {
                         {job.role} · {job.location}
                       </p>
                       {job.bullets.length > 0 && (
-                        <p className="mt-3 text-sm leading-6 text-zinc-700">
-                          {job.bullets.join(" ")}
-                        </p>
+                        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700">
+                          {job.bullets.map((bullet) => (
+                            <li key={bullet}>{bullet}</li>
+                          ))}
+                        </ul>
                       )}
                     </div>
                   ))}
