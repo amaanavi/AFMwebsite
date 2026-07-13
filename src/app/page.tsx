@@ -1,64 +1,138 @@
-import Image from "next/image";
+import {
+  clubsAndAwards,
+  education,
+  experience,
+  interests,
+  languages,
+  profile,
+  skills,
+} from "@/data/resume";
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+      {children}
+    </h2>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div className="flex flex-1 justify-center bg-zinc-50 px-6 py-20 font-sans sm:px-10">
+      <main className="w-full max-w-3xl">
+        <header className="mb-16">
+          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">
+            {profile.name}
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p className="mt-3 max-w-xl text-lg leading-7 text-zinc-600">
+            {profile.tagline}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
+            <span>{profile.location}</span>
+            <a
+              href={`mailto:${profile.email}`}
+              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
+            >
+              {profile.email}
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </header>
+
+        <section className="mb-14">
+          <SectionHeading>Experience</SectionHeading>
+          <div className="mt-6 flex flex-col gap-10">
+            {experience.map((job) => (
+              <div key={`${job.org}-${job.period}`}>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <h3 className="text-base font-semibold text-zinc-900">
+                    {job.org}
+                  </h3>
+                  <span className="text-sm text-zinc-500">{job.period}</span>
+                </div>
+                <p className="text-sm text-zinc-600">
+                  {job.role} · {job.location}
+                </p>
+                {job.bullets.length > 0 && (
+                  <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-14">
+          <SectionHeading>Education</SectionHeading>
+          <div className="mt-6 flex flex-col gap-5">
+            {education.map((item) => (
+              <div
+                key={item.school}
+                className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+              >
+                <div>
+                  <h3 className="text-base font-semibold text-zinc-900">
+                    {item.school}
+                  </h3>
+                  <p className="text-sm text-zinc-600">{item.detail}</p>
+                </div>
+                {item.period && (
+                  <span className="text-sm text-zinc-500">{item.period}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <SectionHeading>Skills & Interests</SectionHeading>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            <div>
+              <h3 className="text-sm font-semibold text-zinc-900">Skills</h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-700">
+                {skills.join(", ")}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-zinc-900">
+                Languages
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-700">
+                {languages.join(", ")}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-zinc-900">
+                Clubs & Awards
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-700">
+                {clubsAndAwards.join(", ")}
+              </p>
+            </div>
+            <div>
+              <h3 className="text-sm font-semibold text-zinc-900">
+                Hobbies & Interests
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-zinc-700">
+                {interests.join(", ")}
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <footer className="mt-20 border-t border-zinc-200 pt-6 text-sm text-zinc-400">
+          © {new Date().getFullYear()} {profile.name}
+        </footer>
       </main>
     </div>
   );
