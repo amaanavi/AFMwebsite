@@ -1,6 +1,6 @@
 export const highlights = [
   {
-    title: "Co-Founder & CEO, LWYRD",
+    title: "Co-Founder & CEO, Office of Rebates and Grants",
     description:
       "Built a legal-tech startup from scratch, advising 20+ companies and sourcing $3M+ in client funding through partner law firms.",
   },
@@ -79,12 +79,12 @@ export const experience = [
     ],
   },
   {
-    org: "Office of Rebates and Grants (LWYRD)",
+    org: "Office of Rebates and Grants",
     role: "Co-Founder (CEO 01/2023–05/2025)",
     location: "New York, NY",
     period: "01/2023 – Present",
     bullets: [
-      "Co-founded a legal services startup (rebranded LWYRD in 2026) partnering with law firms to deliver affordable, on-call legal advice to student-founded startups.",
+      "Co-founded a legal services startup partnering with law firms to deliver affordable, on-call legal advice to student-founded startups.",
       "Sourced and advised 20+ companies on Employee Retention Credit and CARES Act applications via partner law firms, generating $3M+ in client funding and $300K+ in revenue.",
       "Led all client relationships as primary liaison between founders, clients, and partner law firms.",
       "Currently partnering with private and college/university start-up networks to connect early-stage companies with trusted legal and strategic resources.",
