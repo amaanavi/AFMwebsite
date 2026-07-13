@@ -1,6 +1,6 @@
 export const profile = {
   name: "Alexander Maanavi",
-  traits: ["Quantitative", "Entrepreneurial", "Curious"],
+  traits: ["Quantitative", "AI-Driven", "Philomath"],
   tagline:
     "Mathematics & Philosophy student focused on entrepreneurship, venture building, investments, and quantitative strategy.",
   about:
