@@ -104,33 +104,41 @@ export default function ResumePage() {
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
               <h3 className="text-sm font-semibold text-zinc-900">Skills</h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-700">
-                {skills.join(", ")}
-              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                {skills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-zinc-900">
                 Languages
               </h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-700">
-                {languages.join(", ")}
-              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                {languages.map((language) => (
+                  <li key={language}>{language}</li>
+                ))}
+              </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-zinc-900">
                 Clubs & Awards
               </h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-700">
-                {clubsAndAwards.join(", ")}
-              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                {clubsAndAwards.map((club) => (
+                  <li key={club}>{club}</li>
+                ))}
+              </ul>
             </div>
             <div>
               <h3 className="text-sm font-semibold text-zinc-900">
                 Hobbies & Interests
               </h3>
-              <p className="mt-2 text-sm leading-6 text-zinc-700">
-                {interests.join(", ")}
-              </p>
+              <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                {interests.map((interest) => (
+                  <li key={interest}>{interest}</li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
