@@ -8,7 +8,17 @@ export const profile = {
   location: "New York, NY",
   email: "amaanavi84@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexander-maanavi",
+  resumeUrl: "/alexander-maanavi-resume.pdf",
 };
+
+export const works = [
+  {
+    title: "PHL271 Long Essay",
+    description:
+      "An analysis of R v Butler, arguing that the Supreme Court of Canada's obscenity ruling rests on an unstable philosophical foundation, and that Rae Langton's account of pornography as an illocutionary act of subordination supplies the principled basis the Court's reasoning lacked.",
+    href: "/phl271-long-essay.pdf",
+  },
+];
 
 export const education = [
   {

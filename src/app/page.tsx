@@ -6,6 +6,7 @@ import {
   languages,
   profile,
   skills,
+  works,
 } from "@/data/resume";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
@@ -53,8 +54,44 @@ export default function Home() {
           <SectionHeading>Interests</SectionHeading>
         </section>
 
+        <section id="works" className="mb-24 scroll-mt-24">
+          <SectionHeading>Works</SectionHeading>
+          <div className="mt-6 flex flex-col">
+            {works.map((work, i) => (
+              <div
+                key={work.title}
+                className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+              >
+                <h3 className="text-base font-semibold text-zinc-900">
+                  {work.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-zinc-700">
+                  {work.description}
+                </p>
+                <a
+                  href={work.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm font-medium text-zinc-900 underline underline-offset-4"
+                >
+                  Read more
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="resume" className="mb-14 scroll-mt-24">
-          <SectionHeading>Resume</SectionHeading>
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <SectionHeading>Resume</SectionHeading>
+            <a
+              href={profile.resumeUrl}
+              download
+              className="rounded-full bg-zinc-900 px-4 py-1.5 text-xs font-medium text-zinc-50 transition-colors hover:bg-zinc-700"
+            >
+              Download
+            </a>
+          </div>
 
           <div id="experience" className="mt-8 scroll-mt-24">
             <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
