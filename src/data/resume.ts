@@ -2,7 +2,7 @@ export const highlights = [
   {
     title: "Co-Founder & CEO, Office of Rebates and Grants",
     description:
-      "Built a legal-tech startup from scratch, advising 20+ companies and sourcing $3M+ in client funding through partner law firms.",
+      "Built a startup from scratch, advising 20+ companies and sourcing $3M+ in client funding through partner law firms.",
   },
   {
     title: "Quant Strategy, EgaTree",
