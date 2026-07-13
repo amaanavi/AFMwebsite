@@ -57,58 +57,65 @@ export default function Home() {
           <SectionHeading>Resume</SectionHeading>
 
           <div id="experience" className="mt-8 scroll-mt-24">
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-              Experience
-            </h3>
-            <div className="mt-6 flex flex-col gap-10">
-              {experience.map((job) => (
-                <div key={`${job.org}-${job.period}`}>
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h4 className="text-base font-semibold text-zinc-900">
-                      {job.org}
-                    </h4>
-                    <span className="text-sm text-zinc-500">
-                      {job.period}
-                    </span>
-                  </div>
-                  <p className="text-sm text-zinc-600">
-                    {job.role} · {job.location}
-                  </p>
-                  {job.bullets.length > 0 && (
-                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700">
-                      {job.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
+            <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
+              <div>
+                <h3 className="border-b border-zinc-200 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+                  Experience
+                </h3>
+                <div className="flex flex-col">
+                  {experience.map((job, i) => (
+                    <div
+                      key={`${job.org}-${job.period}`}
+                      className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+                    >
+                      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+                        <h4 className="text-base font-semibold text-zinc-900">
+                          {job.org}
+                        </h4>
+                        <span className="shrink-0 rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600">
+                          {job.period}
+                        </span>
+                      </div>
+                      <p className="text-sm text-zinc-600">
+                        {job.role} · {job.location}
+                      </p>
+                      {job.bullets.length > 0 && (
+                        <p className="mt-3 text-sm leading-6 text-zinc-700">
+                          {job.bullets.join(" ")}
+                        </p>
+                      )}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
 
-          <div className="mt-14">
-            <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-              Education
-            </h3>
-            <div className="mt-6 flex flex-col gap-5">
-              {education.map((item) => (
-                <div
-                  key={item.school}
-                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
-                >
-                  <div>
-                    <h4 className="text-base font-semibold text-zinc-900">
-                      {item.school}
-                    </h4>
-                    <p className="text-sm text-zinc-600">{item.detail}</p>
-                  </div>
-                  {item.period && (
-                    <span className="text-sm text-zinc-500">
-                      {item.period}
-                    </span>
-                  )}
+              <div>
+                <h3 className="border-b border-zinc-200 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+                  Education
+                </h3>
+                <div className="flex flex-col">
+                  {education.map((item, i) => (
+                    <div
+                      key={item.school}
+                      className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+                    >
+                      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
+                        <h4 className="text-base font-semibold text-zinc-900">
+                          {item.school}
+                        </h4>
+                        {item.period && (
+                          <span className="shrink-0 rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600">
+                            {item.period}
+                          </span>
+                        )}
+                      </div>
+                      <p className="mt-1 text-sm leading-6 text-zinc-700">
+                        {item.detail}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
 
