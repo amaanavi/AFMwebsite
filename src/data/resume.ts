@@ -99,9 +99,9 @@ export const skills = [
   "Financial Modelling",
   "Excel & Microsoft Office Suite",
   "Python",
-  "C",
-  "MATLAB",
+  "SQL",
   "CRM Creation and Management",
+  "AI-Native",
 ];
 
 export const languages = [
