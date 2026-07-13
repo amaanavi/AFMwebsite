@@ -1,5 +1,20 @@
-import Link from "next/link";
-import { experience, profile } from "@/data/resume";
+import {
+  clubsAndAwards,
+  education,
+  experience,
+  interests,
+  languages,
+  profile,
+  skills,
+} from "@/data/resume";
+
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+      {children}
+    </h2>
+  );
+}
 
 export default function Home() {
   return (
@@ -12,61 +27,146 @@ export default function Home() {
           <p className="mt-4 text-lg italic text-zinc-500">
             {profile.traits.join(" · ")}
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/resume"
-              className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-zinc-50 transition-colors hover:bg-zinc-700"
-            >
-              View Resume
-            </Link>
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
             <a
               href={`mailto:${profile.email}`}
-              className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
+              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
             >
-              Get In Touch
+              {profile.email}
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
+            >
+              LinkedIn
             </a>
           </div>
         </section>
 
-        <section id="about" className="mb-20 scroll-mt-24">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-            About
-          </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-700">
-            {profile.about}
-          </p>
+        <section id="about" className="mb-24 scroll-mt-24">
+          <SectionHeading>About</SectionHeading>
         </section>
 
-        <section id="experience" className="mb-20 scroll-mt-24">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-            Experience
-          </h2>
-          <div className="mt-6 flex flex-col gap-8">
-            {experience.map((job) => (
-              <div key={`${job.org}-${job.period}`}>
-                <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-base font-semibold text-zinc-900">
-                    {job.org}
-                  </h3>
-                  <span className="text-sm text-zinc-500">{job.period}</span>
+        <section id="experience" className="mb-24 scroll-mt-24">
+          <SectionHeading>Experience</SectionHeading>
+        </section>
+
+        <section id="interests" className="mb-24 scroll-mt-24">
+          <SectionHeading>Interests</SectionHeading>
+        </section>
+
+        <section id="resume" className="mb-14 scroll-mt-24">
+          <SectionHeading>Resume</SectionHeading>
+
+          <div className="mt-8">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+              Experience
+            </h3>
+            <div className="mt-6 flex flex-col gap-10">
+              {experience.map((job) => (
+                <div key={`${job.org}-${job.period}`}>
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h4 className="text-base font-semibold text-zinc-900">
+                      {job.org}
+                    </h4>
+                    <span className="text-sm text-zinc-500">
+                      {job.period}
+                    </span>
+                  </div>
+                  <p className="text-sm text-zinc-600">
+                    {job.role} · {job.location}
+                  </p>
+                  {job.bullets.length > 0 && (
+                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700">
+                      {job.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
-                <p className="text-sm text-zinc-600">
-                  {job.role} · {job.location}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-          <Link
-            href="/resume"
-            className="mt-6 inline-block text-sm font-medium text-zinc-900 underline underline-offset-4"
-          >
-            View full resume
-          </Link>
+
+          <div className="mt-14">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+              Education
+            </h3>
+            <div className="mt-6 flex flex-col gap-5">
+              {education.map((item) => (
+                <div
+                  key={item.school}
+                  className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1"
+                >
+                  <div>
+                    <h4 className="text-base font-semibold text-zinc-900">
+                      {item.school}
+                    </h4>
+                    <p className="text-sm text-zinc-600">{item.detail}</p>
+                  </div>
+                  {item.period && (
+                    <span className="text-sm text-zinc-500">
+                      {item.period}
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+              Skills & Interests
+            </h3>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div>
+                <h4 className="text-sm font-semibold text-zinc-900">
+                  Skills
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                  {skills.map((skill) => (
+                    <li key={skill}>{skill}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-zinc-900">
+                  Languages
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                  {languages.map((language) => (
+                    <li key={language}>{language}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-zinc-900">
+                  Clubs & Awards
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                  {clubsAndAwards.map((club) => (
+                    <li key={club}>{club}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-sm font-semibold text-zinc-900">
+                  Hobbies & Interests
+                </h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                  {interests.map((interest) => (
+                    <li key={interest}>{interest}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
 
         <footer className="border-t border-zinc-200 pt-6 text-sm text-zinc-400">
-          Built with Next.js & Tailwind CSS
+          © {new Date().getFullYear()} {profile.name}
         </footer>
       </main>
     </div>
