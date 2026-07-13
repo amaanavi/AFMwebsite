@@ -1,3 +1,26 @@
+export const highlights = [
+  {
+    title: "Co-Founder & CEO, LWYRD",
+    description:
+      "Built a legal-tech startup from scratch, advising 20+ companies and sourcing $3M+ in client funding through partner law firms.",
+  },
+  {
+    title: "Quant Strategy, EgaTree",
+    description:
+      "Engineered Bitcoin Power-Law trading models in Python, backtested against 14 years of price data for a seed-stage crypto fund.",
+  },
+  {
+    title: "Investment Research, Manas AI",
+    description:
+      "Ran diligence on biotech pipeline candidates and briefed the C-suite weekly on capital deployment.",
+  },
+  {
+    title: "Mathematics & Philosophy, UofT",
+    description:
+      "Studying math and philosophy at the University of Toronto, with a minor in statistics — when not competing in chess or poker.",
+  },
+];
+
 export const profile = {
   name: "Alexander Maanavi",
   tagline:
