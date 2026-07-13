@@ -1,30 +1,10 @@
-export const highlights = [
-  {
-    title: "Co-Founder & CEO, Office of Rebates and Grants",
-    description:
-      "Built a startup from scratch, advising 20+ companies and sourcing $3M+ in client funding through partner law firms.",
-  },
-  {
-    title: "Quant Strategy, EgaTree",
-    description:
-      "Engineered Bitcoin Power-Law trading models in Python, backtested against 14 years of price data for a seed-stage crypto fund.",
-  },
-  {
-    title: "Investment Research, Manas AI",
-    description:
-      "Ran diligence on biotech pipeline candidates and briefed the C-suite weekly on capital deployment.",
-  },
-  {
-    title: "Mathematics & Philosophy, UofT",
-    description:
-      "Studying math and philosophy at the University of Toronto, with a minor in statistics — when not competing in chess or poker.",
-  },
-];
-
 export const profile = {
   name: "Alexander Maanavi",
+  traits: ["Quantitative", "Entrepreneurial", "Curious"],
   tagline:
     "Mathematics & Philosophy student focused on entrepreneurship, venture building, investments, and quantitative strategy.",
+  about:
+    "I'm a Mathematics & Philosophy student at the University of Toronto with a minor in Statistics. Alongside school, I co-founded the Office of Rebates and Grants, advising 20+ startups on grant funding, and have worked across quantitative crypto strategy, biotech investment research, and M&A due diligence. Outside of work, I compete in chess (~2000-rated) and poker (4x Fiji Poker Champion).",
   location: "New York, NY",
   email: "amaanavi84@gmail.com",
   linkedin: "https://www.linkedin.com/in/alexander-maanavi",
