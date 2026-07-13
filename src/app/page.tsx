@@ -49,10 +49,6 @@ export default function Home() {
           <SectionHeading>About</SectionHeading>
         </section>
 
-        <section id="experience" className="mb-24 scroll-mt-24">
-          <SectionHeading>Experience</SectionHeading>
-        </section>
-
         <section id="interests" className="mb-24 scroll-mt-24">
           <SectionHeading>Interests</SectionHeading>
         </section>
@@ -60,7 +56,7 @@ export default function Home() {
         <section id="resume" className="mb-14 scroll-mt-24">
           <SectionHeading>Resume</SectionHeading>
 
-          <div className="mt-8">
+          <div id="experience" className="mt-8 scroll-mt-24">
             <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
               Experience
             </h3>
