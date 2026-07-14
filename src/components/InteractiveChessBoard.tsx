@@ -20,6 +20,36 @@ function turnLabel(game: Chess) {
   return `${game.turn() === "w" ? "White" : "Black"} to move`;
 }
 
+function MoveList({ moves }: { moves: string[] }) {
+  const rows: { number: number; white: string; black?: string }[] = [];
+  for (let i = 0; i < moves.length; i += 2) {
+    rows.push({
+      number: i / 2 + 1,
+      white: moves[i],
+      black: moves[i + 1],
+    });
+  }
+
+  return (
+    <div className="max-h-[480px] w-full overflow-y-auto rounded-lg border border-zinc-200 bg-white sm:w-48">
+      <table className="w-full text-sm">
+        <tbody>
+          {rows.map((row) => (
+            <tr
+              key={row.number}
+              className="border-b border-zinc-100 last:border-0"
+            >
+              <td className="w-8 py-1.5 pl-3 text-zinc-400">{row.number}.</td>
+              <td className="py-1.5 text-zinc-800">{row.white}</td>
+              <td className="py-1.5 pr-3 text-zinc-800">{row.black ?? ""}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 export default function InteractiveChessBoard() {
   const [game] = useState(() => new Chess(famousGames[0].fen));
   const [gameInfo, setGameInfo] = useState(famousGames[0]);
@@ -92,21 +122,26 @@ export default function InteractiveChessBoard() {
         </p>
       </div>
 
-      <div className="w-full max-w-[420px]">
-        <Chessboard
-          options={{
-            position: fen,
-            onPieceDrop,
-            onSquareClick,
-            squareStyles: selectedSquare
-              ? { [selectedSquare]: { backgroundColor: "#fde68a" } }
-              : {},
-            boardOrientation: "white",
-            darkSquareStyle: { backgroundColor: "#a1a1aa" },
-            lightSquareStyle: { backgroundColor: "#f4f4f5" },
-          }}
-        />
+      <div className="flex flex-col items-start gap-4 sm:flex-row">
+        <div className="w-full max-w-[420px]">
+          <Chessboard
+            options={{
+              position: fen,
+              onPieceDrop,
+              onSquareClick,
+              squareStyles: selectedSquare
+                ? { [selectedSquare]: { backgroundColor: "#fde68a" } }
+                : {},
+              boardOrientation: "white",
+              darkSquareStyle: { backgroundColor: "#a1a1aa" },
+              lightSquareStyle: { backgroundColor: "#f4f4f5" },
+            }}
+          />
+        </div>
+
+        <MoveList moves={gameInfo.moves} />
       </div>
+
       <div className="mt-4 flex items-center gap-4 text-sm text-zinc-600">
         <span>{status}</span>
         <button
