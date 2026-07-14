@@ -116,7 +116,11 @@ export const travelPhotos = [
     alt: "Talking with a friend at sunset on a dock by the water",
     location: "Lake Simcoe, Ontario, Canada",
   },
-  { src: "/travel/travel-02.jpg", alt: "Street art mural of a figure on a building wall" },
+  {
+    src: "/travel/travel-02.jpg",
+    alt: "Street art mural of a figure on a building wall",
+    location: "Ulaanbaatar, Mongolia",
+  },
   { src: "/travel/travel-03.jpg", alt: "Walking down a narrow alley between sand-colored walls" },
   { src: "/travel/travel-04.jpg", alt: "Wall of framed art prints and photography" },
   {
@@ -124,8 +128,16 @@ export const travelPhotos = [
     alt: "Standing in front of a large mural of a boy with fireflies",
     location: "Ulaanbaatar, Mongolia",
   },
-  { src: "/travel/travel-06.jpg", alt: "Three friends smiling on a boat" },
-  { src: "/travel/travel-07.jpg", alt: "Swimmers watching the sunset over the water" },
+  {
+    src: "/travel/travel-06.jpg",
+    alt: "Three friends smiling on a boat",
+    location: "Punta Cana, La Altagracia, Dominican Republic",
+  },
+  {
+    src: "/travel/travel-07.jpg",
+    alt: "Swimmers watching the sunset over the water",
+    location: "Jumeirah, Dubai, UAE",
+  },
   { src: "/travel/travel-08.jpg", alt: "Two friends walking through a mountain valley at sunrise" },
   { src: "/travel/travel-09.jpg", alt: "Overlooking a rocky cove full of small boats" },
   {
@@ -138,16 +150,32 @@ export const travelPhotos = [
     alt: "Walking a dog along a forest canal path",
     location: "Munich, Bavaria, Germany",
   },
-  { src: "/travel/travel-12.jpg", alt: "Sitting above a geothermal valley in Iceland" },
-  { src: "/travel/travel-13.jpg", alt: "Palm tree silhouette on the beach at sunset" },
+  {
+    src: "/travel/travel-12.jpg",
+    alt: "Sitting above a geothermal valley in Iceland",
+    location: "Thingvellir, Iceland",
+  },
+  {
+    src: "/travel/travel-13.jpg",
+    alt: "Palm tree silhouette on the beach at sunset",
+    location: "Pointe-Noire, Guadeloupe",
+  },
   { src: "/travel/travel-14.jpg", alt: "Resting against a pink building wall near the beach" },
   {
     src: "/travel/travel-15.jpg",
     alt: "Bougainvillea flowers climbing a staircase railing",
     location: "Deira, Dubai, UAE",
   },
-  { src: "/travel/travel-16.jpg", alt: "Examining a placard next to a jet on display" },
-  { src: "/travel/travel-17.jpg", alt: "Descending snowy steps at night" },
+  {
+    src: "/travel/travel-16.jpg",
+    alt: "Examining a placard next to a jet on display",
+    location: "New York City, NY, USA",
+  },
+  {
+    src: "/travel/travel-17.jpg",
+    alt: "Descending snowy steps at night",
+    location: "Casa Loma, Toronto, Ontario, Canada",
+  },
   { src: "/travel/travel-18.jpg", alt: "Standing by a lake beneath a mountain peak" },
 ];
 
