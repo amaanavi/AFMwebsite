@@ -121,8 +121,16 @@ export const travelPhotos = [
     alt: "Street art mural of a figure on a building wall",
     location: "Ulaanbaatar, Mongolia",
   },
-  { src: "/travel/travel-03.jpg", alt: "Walking down a narrow alley between sand-colored walls" },
-  { src: "/travel/travel-04.jpg", alt: "Wall of framed art prints and photography" },
+  {
+    src: "/travel/travel-03.jpg",
+    alt: "Walking down a narrow alley between sand-colored walls",
+    location: "Deira, Dubai, UAE",
+  },
+  {
+    src: "/travel/travel-04.jpg",
+    alt: "Wall of framed art prints and photography",
+    location: "South Hampton, NY, USA",
+  },
   {
     src: "/travel/travel-05.jpg",
     alt: "Standing in front of a large mural of a boy with fireflies",
@@ -138,8 +146,16 @@ export const travelPhotos = [
     alt: "Swimmers watching the sunset over the water",
     location: "Jumeirah, Dubai, UAE",
   },
-  { src: "/travel/travel-08.jpg", alt: "Two friends walking through a mountain valley at sunrise" },
-  { src: "/travel/travel-09.jpg", alt: "Overlooking a rocky cove full of small boats" },
+  {
+    src: "/travel/travel-08.jpg",
+    alt: "Two friends walking through a mountain valley at sunrise",
+    location: "Lac de Taney, Valais, Switzerland",
+  },
+  {
+    src: "/travel/travel-09.jpg",
+    alt: "Overlooking a rocky cove full of small boats",
+    location: "Brseč, Croatia",
+  },
   {
     src: "/travel/travel-10.jpg",
     alt: "Flares and smoke in the stands at a night soccer match",
@@ -160,7 +176,11 @@ export const travelPhotos = [
     alt: "Palm tree silhouette on the beach at sunset",
     location: "Pointe-Noire, Guadeloupe",
   },
-  { src: "/travel/travel-14.jpg", alt: "Resting against a pink building wall near the beach" },
+  {
+    src: "/travel/travel-14.jpg",
+    alt: "Resting against a pink building wall near the beach",
+    location: "Deshaies, Guadeloupe",
+  },
   {
     src: "/travel/travel-15.jpg",
     alt: "Bougainvillea flowers climbing a staircase railing",
@@ -176,7 +196,11 @@ export const travelPhotos = [
     alt: "Descending snowy steps at night",
     location: "Casa Loma, Toronto, Ontario, Canada",
   },
-  { src: "/travel/travel-18.jpg", alt: "Standing by a lake beneath a mountain peak" },
+  {
+    src: "/travel/travel-18.jpg",
+    alt: "Standing by a lake beneath a mountain peak",
+    location: "Lac de Taney, Valais, Switzerland",
+  },
 ];
 
 export const works = [
