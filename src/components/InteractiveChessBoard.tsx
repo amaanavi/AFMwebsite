@@ -9,6 +9,8 @@ import type {
 } from "react-chessboard";
 import { famousGames } from "@/data/resume";
 
+type LastMove = { from: string; to: string } | null;
+
 function turnLabel(game: Chess) {
   if (game.isCheckmate()) {
     return `Checkmate — ${game.turn() === "w" ? "Black" : "White"} wins`;
@@ -20,30 +22,54 @@ function turnLabel(game: Chess) {
   return `${game.turn() === "w" ? "White" : "Black"} to move`;
 }
 
-function MoveList({ moves }: { moves: string[] }) {
+function MoveList({
+  moves,
+  currentPly,
+}: {
+  moves: string[];
+  currentPly: number;
+}) {
   const rows: { number: number; white: string; black?: string }[] = [];
   for (let i = 0; i < moves.length; i += 2) {
-    rows.push({
-      number: i / 2 + 1,
-      white: moves[i],
-      black: moves[i + 1],
-    });
+    rows.push({ number: i / 2 + 1, white: moves[i], black: moves[i + 1] });
   }
 
   return (
     <div className="max-h-[480px] w-full overflow-y-auto rounded-lg border border-zinc-200 bg-white sm:w-48">
       <table className="w-full text-sm">
         <tbody>
-          {rows.map((row) => (
-            <tr
-              key={row.number}
-              className="border-b border-zinc-100 last:border-0"
-            >
-              <td className="w-8 py-1.5 pl-3 text-zinc-400">{row.number}.</td>
-              <td className="py-1.5 text-zinc-800">{row.white}</td>
-              <td className="py-1.5 pr-3 text-zinc-800">{row.black ?? ""}</td>
-            </tr>
-          ))}
+          {rows.map((row) => {
+            const whitePly = row.number * 2 - 1;
+            const blackPly = row.number * 2;
+            return (
+              <tr
+                key={row.number}
+                className="border-b border-zinc-100 last:border-0"
+              >
+                <td className="w-8 py-1.5 pl-3 text-zinc-400">
+                  {row.number}.
+                </td>
+                <td
+                  className={`py-1.5 ${
+                    whitePly === currentPly
+                      ? "bg-sky-100 font-semibold text-zinc-900"
+                      : "text-zinc-800"
+                  }`}
+                >
+                  {row.white}
+                </td>
+                <td
+                  className={`py-1.5 pr-3 ${
+                    blackPly === currentPly
+                      ? "bg-sky-100 font-semibold text-zinc-900"
+                      : "text-zinc-800"
+                  }`}
+                >
+                  {row.black ?? ""}
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
@@ -51,21 +77,47 @@ function MoveList({ moves }: { moves: string[] }) {
 }
 
 export default function InteractiveChessBoard() {
-  const [game] = useState(() => new Chess(famousGames[0].fen));
+  const [game] = useState(() => new Chess());
   const [gameInfo, setGameInfo] = useState(famousGames[0]);
+  const [replayPly, setReplayPly] = useState(famousGames[0].startPly);
   const [fen, setFen] = useState(game.fen());
   const [status, setStatus] = useState(() => turnLabel(game));
   const [selectedSquare, setSelectedSquare] = useState<string | null>(null);
+  const [lastMove, setLastMove] = useState<LastMove>(null);
 
   useEffect(() => {
     const randomGame =
       famousGames[Math.floor(Math.random() * famousGames.length)];
-    game.load(randomGame.fen);
     setGameInfo(randomGame);
-    setFen(game.fen());
-    setStatus(turnLabel(game));
+    setReplayPly(randomGame.startPly);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    game.reset();
+    let last: LastMove = null;
+    for (let i = 0; i < replayPly; i++) {
+      const result = game.move(gameInfo.moves[i]);
+      if (result) last = { from: result.from, to: result.to };
+    }
+    setFen(game.fen());
+    setStatus(turnLabel(game));
+    setLastMove(last);
+    setSelectedSquare(null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameInfo, replayPly]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "ArrowRight") {
+        setReplayPly((p) => Math.min(p + 1, gameInfo.moves.length));
+      } else if (e.key === "ArrowLeft") {
+        setReplayPly((p) => Math.max(p - 1, 0));
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [gameInfo]);
 
   function attemptMove(from: string, to: string) {
     try {
@@ -73,6 +125,7 @@ export default function InteractiveChessBoard() {
       if (move === null) return false;
       setFen(game.fen());
       setStatus(turnLabel(game));
+      setLastMove({ from: move.from, to: move.to });
       return true;
     } catch {
       return false;
@@ -104,10 +157,16 @@ export default function InteractiveChessBoard() {
   }
 
   function reset() {
-    game.load(gameInfo.fen);
-    setFen(game.fen());
-    setStatus(turnLabel(game));
-    setSelectedSquare(null);
+    setReplayPly(gameInfo.startPly);
+  }
+
+  const squareStyles: Record<string, { backgroundColor: string }> = {};
+  if (lastMove) {
+    squareStyles[lastMove.from] = { backgroundColor: "#bae6fd" };
+    squareStyles[lastMove.to] = { backgroundColor: "#bae6fd" };
+  }
+  if (selectedSquare) {
+    squareStyles[selectedSquare] = { backgroundColor: "#fde68a" };
   }
 
   return (
@@ -129,9 +188,7 @@ export default function InteractiveChessBoard() {
               position: fen,
               onPieceDrop,
               onSquareClick,
-              squareStyles: selectedSquare
-                ? { [selectedSquare]: { backgroundColor: "#fde68a" } }
-                : {},
+              squareStyles,
               boardOrientation: "white",
               darkSquareStyle: { backgroundColor: "#a1a1aa" },
               lightSquareStyle: { backgroundColor: "#f4f4f5" },
@@ -139,7 +196,7 @@ export default function InteractiveChessBoard() {
           />
         </div>
 
-        <MoveList moves={gameInfo.moves} />
+        <MoveList moves={gameInfo.moves} currentPly={replayPly} />
       </div>
 
       <div className="mt-4 flex items-center gap-4 text-sm text-zinc-600">
@@ -151,6 +208,9 @@ export default function InteractiveChessBoard() {
           Reset
         </button>
       </div>
+      <p className="mt-2 text-xs text-zinc-400">
+        Use ← → to step through the game
+      </p>
     </div>
   );
 }
