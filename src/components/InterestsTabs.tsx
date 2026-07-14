@@ -12,12 +12,12 @@ export default function InterestsTabs() {
 
   return (
     <div className="mt-8">
-      <div className="flex gap-6 border-b border-zinc-800">
+      <div className="grid grid-cols-3 border-b border-zinc-800">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActive(tab)}
-            className={`-mb-px border-b-2 pb-3 text-sm font-medium transition-colors ${
+            className={`-mb-px w-full border-b-2 pb-3 text-center text-sm font-medium transition-colors ${
               active === tab
                 ? "border-white text-white"
                 : "border-transparent text-zinc-500 hover:text-zinc-300"
