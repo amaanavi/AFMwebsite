@@ -32,13 +32,24 @@ export default function InterestsTabs() {
         {active === "Travel" && (
           <div className="columns-2 gap-4 sm:columns-4">
             {travelPhotos.map((photo) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <div
                 key={photo.src}
-                src={photo.src}
-                alt={photo.alt}
-                className="mb-4 w-full rounded-lg"
-              />
+                className="relative mb-4 break-inside-avoid"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full rounded-lg"
+                />
+                {photo.location && (
+                  <div className="pointer-events-none absolute inset-x-0 top-0 rounded-t-lg bg-gradient-to-b from-black/50 to-transparent p-3">
+                    <p className="text-xs font-medium text-white/50">
+                      {photo.location}
+                    </p>
+                  </div>
+                )}
+              </div>
             ))}
           </div>
         )}

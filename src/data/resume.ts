@@ -111,7 +111,11 @@ export const famousGames = [
 ];
 
 export const travelPhotos = [
-  { src: "/travel/travel-01.jpg", alt: "Talking with a friend at sunset on a dock by the water" },
+  {
+    src: "/travel/travel-01.jpg",
+    alt: "Talking with a friend at sunset on a dock by the water",
+    location: "Lake Simcoe, Ontario, Canada",
+  },
   { src: "/travel/travel-02.jpg", alt: "Street art mural of a figure on a building wall" },
   { src: "/travel/travel-03.jpg", alt: "Walking down a narrow alley between sand-colored walls" },
   { src: "/travel/travel-04.jpg", alt: "Wall of framed art prints and photography" },
