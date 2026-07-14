@@ -4,7 +4,7 @@ import { useState } from "react";
 import { travelPhotos, works } from "@/data/resume";
 import InteractiveChessBoard from "@/components/InteractiveChessBoard";
 
-const tabs = ["Travel", "Works", "Hobbies"] as const;
+const tabs = ["Works", "Travel", "Hobbies"] as const;
 type Tab = (typeof tabs)[number];
 
 export default function InterestsTabs() {
