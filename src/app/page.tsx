@@ -8,6 +8,7 @@ import {
   skills,
   works,
 } from "@/data/resume";
+import InteractiveChessBoard from "@/components/InteractiveChessBoard";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -43,6 +44,10 @@ export default function Home() {
             >
               LinkedIn
             </a>
+          </div>
+
+          <div className="mt-12">
+            <InteractiveChessBoard />
           </div>
         </section>
 
