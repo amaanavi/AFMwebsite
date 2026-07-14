@@ -30,14 +30,14 @@ export default function InterestsTabs() {
 
       <div className="mt-6">
         {active === "Travel" && (
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="columns-2 gap-4 sm:columns-4">
             {travelPhotos.map((photo) => (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 key={photo.src}
                 src={photo.src}
                 alt={photo.alt}
-                className="aspect-square w-full rounded-lg object-cover"
+                className="mb-4 w-full rounded-lg"
               />
             ))}
           </div>
