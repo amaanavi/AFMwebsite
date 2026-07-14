@@ -36,8 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
-# source PDFs dropped at repo root (clean copies live in /public)
+# source PDFs/photos dropped at repo root (clean copies live in /public)
 /*.pdf
+/*.jpg
+/*.JPG
+/*.jpeg
+/*.JPEG
+/*.png
+/*.PNG
+/*.heic
+/*.HEIC
 
 # typescript
 *.tsbuildinfo
