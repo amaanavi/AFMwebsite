@@ -110,6 +110,13 @@ export const famousGames = [
   },
 ];
 
+export const travelPhotos = [
+  { src: "/travel/travel-1.jpg", alt: "Descending snowy steps at night" },
+  { src: "/travel/travel-2.jpg", alt: "Talking with a friend at sunset by the water" },
+  { src: "/travel/travel-3.jpg", alt: "Standing in front of a large mural" },
+  { src: "/travel/travel-4.jpg", alt: "Examining a placard next to a jet on display" },
+];
+
 export const works = [
   {
     title:

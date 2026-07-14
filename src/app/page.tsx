@@ -6,9 +6,8 @@ import {
   languages,
   profile,
   skills,
-  works,
 } from "@/data/resume";
-import InteractiveChessBoard from "@/components/InteractiveChessBoard";
+import InterestsTabs from "@/components/InterestsTabs";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -53,36 +52,7 @@ export default function Home() {
 
         <section id="interests" className="mb-24 scroll-mt-24">
           <SectionHeading>Interests</SectionHeading>
-          <div className="mt-8">
-            <InteractiveChessBoard />
-          </div>
-        </section>
-
-        <section id="works" className="mb-24 scroll-mt-24">
-          <SectionHeading>Works</SectionHeading>
-          <div className="mt-6 flex flex-col">
-            {works.map((work, i) => (
-              <div
-                key={work.title}
-                className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
-              >
-                <h3 className="text-base font-semibold text-zinc-900">
-                  {work.title}
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-700">
-                  {work.description}
-                </p>
-                <a
-                  href={work.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-medium text-zinc-900 underline underline-offset-4"
-                >
-                  Read more
-                </a>
-              </div>
-            ))}
-          </div>
+          <InterestsTabs />
         </section>
 
         <section id="resume" className="mb-14 scroll-mt-24">
