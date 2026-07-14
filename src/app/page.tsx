@@ -45,10 +45,6 @@ export default function Home() {
               LinkedIn
             </a>
           </div>
-
-          <div className="mt-12">
-            <InteractiveChessBoard />
-          </div>
         </section>
 
         <section id="about" className="mb-24 scroll-mt-24">
@@ -57,6 +53,9 @@ export default function Home() {
 
         <section id="interests" className="mb-24 scroll-mt-24">
           <SectionHeading>Interests</SectionHeading>
+          <div className="mt-8">
+            <InteractiveChessBoard />
+          </div>
         </section>
 
         <section id="works" className="mb-24 scroll-mt-24">
