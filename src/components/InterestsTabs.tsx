@@ -8,7 +8,7 @@ const tabs = ["Works", "Travel", "Hobbies"] as const;
 type Tab = (typeof tabs)[number];
 
 export default function InterestsTabs() {
-  const [active, setActive] = useState<Tab>("Travel");
+  const [active, setActive] = useState<Tab>("Works");
 
   return (
     <div className="mt-8">
