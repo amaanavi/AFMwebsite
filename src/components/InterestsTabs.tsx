@@ -12,15 +12,15 @@ export default function InterestsTabs() {
 
   return (
     <div className="mt-8">
-      <div className="flex gap-6 border-b border-zinc-200">
+      <div className="flex gap-6 border-b border-zinc-800">
         {tabs.map((tab) => (
           <button
             key={tab}
             onClick={() => setActive(tab)}
             className={`-mb-px border-b-2 pb-3 text-sm font-medium transition-colors ${
               active === tab
-                ? "border-zinc-900 text-zinc-900"
-                : "border-transparent text-zinc-500 hover:text-zinc-700"
+                ? "border-white text-white"
+                : "border-transparent text-zinc-500 hover:text-zinc-300"
             }`}
           >
             {tab}
@@ -48,19 +48,19 @@ export default function InterestsTabs() {
             {works.map((work, i) => (
               <div
                 key={work.title}
-                className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+                className={`py-6 ${i !== 0 ? "border-t border-zinc-800" : ""}`}
               >
-                <h3 className="text-base font-semibold text-zinc-900">
+                <h3 className="text-base font-semibold text-zinc-50">
                   {work.title}
                 </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-700">
+                <p className="mt-2 text-sm leading-6 text-zinc-300">
                   {work.description}
                 </p>
                 <a
                   href={work.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-medium text-zinc-900 underline underline-offset-4"
+                  className="mt-3 inline-block text-sm font-medium text-zinc-50 underline underline-offset-4"
                 >
                   Read more
                 </a>

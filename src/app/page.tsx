@@ -19,19 +19,19 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <div className="flex flex-1 justify-center bg-zinc-50 px-6 font-sans sm:px-0">
-      <main className="w-full max-w-3xl py-20">
+    <div className="flex flex-1 justify-center bg-black px-6 font-sans sm:px-10 lg:px-16">
+      <main className="w-full max-w-7xl py-20">
         <section className="mb-24">
-          <h1 className="text-5xl font-semibold tracking-tight text-zinc-900 sm:text-6xl">
+          <h1 className="text-5xl font-semibold tracking-tight text-zinc-50 sm:text-6xl">
             {profile.name}
           </h1>
-          <p className="mt-4 text-lg italic text-zinc-500">
+          <p className="mt-4 text-lg italic text-zinc-400">
             {profile.traits.join(" · ")}
           </p>
-          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-500">
+          <div className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-sm text-zinc-400">
             <a
               href={`mailto:${profile.email}`}
-              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
+              className="text-zinc-300 underline underline-offset-2 hover:text-white"
             >
               {profile.email}
             </a>
@@ -39,7 +39,7 @@ export default function Home() {
               href={profile.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-700 underline underline-offset-2 hover:text-zinc-900"
+              className="text-zinc-300 underline underline-offset-2 hover:text-white"
             >
               LinkedIn
             </a>
@@ -61,7 +61,7 @@ export default function Home() {
             <a
               href={profile.resumeUrl}
               download
-              className="rounded-full bg-zinc-900 px-4 py-1.5 text-xs font-medium text-zinc-50 transition-colors hover:bg-zinc-700"
+              className="rounded-full bg-white px-4 py-1.5 text-xs font-medium text-black transition-colors hover:bg-zinc-300"
             >
               Download
             </a>
@@ -70,28 +70,28 @@ export default function Home() {
           <div id="experience" className="mt-8 scroll-mt-24">
             <div className="grid gap-x-10 gap-y-12 sm:grid-cols-2">
               <div>
-                <h3 className="border-b border-zinc-200 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+                <h3 className="border-b border-zinc-800 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
                   Experience
                 </h3>
                 <div className="flex flex-col">
                   {experience.map((job, i) => (
                     <div
                       key={`${job.org}-${job.period}`}
-                      className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+                      className={`py-6 ${i !== 0 ? "border-t border-zinc-800" : ""}`}
                     >
                       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
-                        <h4 className="text-base font-semibold text-zinc-900">
+                        <h4 className="text-base font-semibold text-zinc-50">
                           {job.org}
                         </h4>
-                        <span className="shrink-0 rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600">
+                        <span className="shrink-0 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-medium text-zinc-300">
                           {job.period}
                         </span>
                       </div>
-                      <p className="text-sm text-zinc-600">
+                      <p className="text-sm text-zinc-400">
                         {job.role} · {job.location}
                       </p>
                       {job.bullets.length > 0 && (
-                        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700">
+                        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-300">
                           {job.bullets.map((bullet) => (
                             <li key={bullet}>{bullet}</li>
                           ))}
@@ -103,26 +103,26 @@ export default function Home() {
               </div>
 
               <div>
-                <h3 className="border-b border-zinc-200 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+                <h3 className="border-b border-zinc-800 pb-3 text-sm font-semibold uppercase tracking-widest text-zinc-500">
                   Education
                 </h3>
                 <div className="flex flex-col">
                   {education.map((item, i) => (
                     <div
                       key={item.school}
-                      className={`py-6 ${i !== 0 ? "border-t border-zinc-200" : ""}`}
+                      className={`py-6 ${i !== 0 ? "border-t border-zinc-800" : ""}`}
                     >
                       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
-                        <h4 className="text-base font-semibold text-zinc-900">
+                        <h4 className="text-base font-semibold text-zinc-50">
                           {item.school}
                         </h4>
                         {item.period && (
-                          <span className="shrink-0 rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600">
+                          <span className="shrink-0 rounded-full border border-zinc-700 bg-zinc-900 px-3 py-1 text-xs font-medium text-zinc-300">
                             {item.period}
                           </span>
                         )}
                       </div>
-                      <p className="mt-1 text-sm leading-6 text-zinc-700">
+                      <p className="mt-1 text-sm leading-6 text-zinc-300">
                         {item.detail}
                       </p>
                     </div>
@@ -138,40 +138,38 @@ export default function Home() {
             </h3>
             <div className="mt-6 grid gap-6 sm:grid-cols-2">
               <div>
-                <h4 className="text-sm font-semibold text-zinc-900">
-                  Skills
-                </h4>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                <h4 className="text-sm font-semibold text-zinc-50">Skills</h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-300">
                   {skills.map((skill) => (
                     <li key={skill}>{skill}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-zinc-900">
+                <h4 className="text-sm font-semibold text-zinc-50">
                   Languages
                 </h4>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-300">
                   {languages.map((language) => (
                     <li key={language}>{language}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-zinc-900">
+                <h4 className="text-sm font-semibold text-zinc-50">
                   Clubs & Awards
                 </h4>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-300">
                   {clubsAndAwards.map((club) => (
                     <li key={club}>{club}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h4 className="text-sm font-semibold text-zinc-900">
+                <h4 className="text-sm font-semibold text-zinc-50">
                   Hobbies & Interests
                 </h4>
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-700">
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-sm leading-6 text-zinc-300">
                   {interests.map((interest) => (
                     <li key={interest}>{interest}</li>
                   ))}
@@ -181,7 +179,7 @@ export default function Home() {
           </div>
         </section>
 
-        <footer className="border-t border-zinc-200 pt-6 text-sm text-zinc-400">
+        <footer className="border-t border-zinc-800 pt-6 text-sm text-zinc-500">
           © {new Date().getFullYear()} {profile.name}
         </footer>
       </main>

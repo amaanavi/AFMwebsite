@@ -35,7 +35,7 @@ function MoveList({
   }
 
   return (
-    <div className="max-h-[480px] w-full overflow-y-auto rounded-lg border border-zinc-200 bg-white sm:w-48">
+    <div className="max-h-[480px] w-full overflow-y-auto rounded-lg border border-zinc-800 bg-zinc-950 sm:w-48">
       <table className="w-full text-sm">
         <tbody>
           {rows.map((row) => {
@@ -44,16 +44,16 @@ function MoveList({
             return (
               <tr
                 key={row.number}
-                className="border-b border-zinc-100 last:border-0"
+                className="border-b border-zinc-900 last:border-0"
               >
-                <td className="w-8 py-1.5 pl-3 text-zinc-400">
+                <td className="w-8 py-1.5 pl-3 text-zinc-600">
                   {row.number}.
                 </td>
                 <td
                   className={`py-1.5 ${
                     whitePly === currentPly
-                      ? "bg-sky-100 font-semibold text-zinc-900"
-                      : "text-zinc-800"
+                      ? "bg-zinc-800 font-semibold text-white"
+                      : "text-zinc-300"
                   }`}
                 >
                   {row.white}
@@ -61,8 +61,8 @@ function MoveList({
                 <td
                   className={`py-1.5 pr-3 ${
                     blackPly === currentPly
-                      ? "bg-sky-100 font-semibold text-zinc-900"
-                      : "text-zinc-800"
+                      ? "bg-zinc-800 font-semibold text-white"
+                      : "text-zinc-300"
                   }`}
                 >
                   {row.black ?? ""}
@@ -172,7 +172,7 @@ export default function InteractiveChessBoard() {
   return (
     <div className="flex flex-col items-center">
       <div className="mb-4 text-center">
-        <p className="text-sm font-semibold text-zinc-900">
+        <p className="text-sm font-semibold text-zinc-50">
           {gameInfo.white} ({gameInfo.whiteRating}) vs. {gameInfo.black} (
           {gameInfo.blackRating})
         </p>
@@ -190,8 +190,8 @@ export default function InteractiveChessBoard() {
               onSquareClick,
               squareStyles,
               boardOrientation: "white",
-              darkSquareStyle: { backgroundColor: "#a1a1aa" },
-              lightSquareStyle: { backgroundColor: "#f4f4f5" },
+              darkSquareStyle: { backgroundColor: "#3f3f46" },
+              lightSquareStyle: { backgroundColor: "#71717a" },
             }}
           />
         </div>
@@ -199,16 +199,16 @@ export default function InteractiveChessBoard() {
         <MoveList moves={gameInfo.moves} currentPly={replayPly} />
       </div>
 
-      <div className="mt-4 flex items-center gap-4 text-sm text-zinc-600">
+      <div className="mt-4 flex items-center gap-4 text-sm text-zinc-400">
         <span>{status}</span>
         <button
           onClick={reset}
-          className="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
+          className="rounded-full border border-zinc-700 px-3 py-1 text-xs font-medium text-zinc-300 transition-colors hover:border-white hover:text-white"
         >
           Reset
         </button>
       </div>
-      <p className="mt-2 text-xs text-zinc-400">
+      <p className="mt-2 text-xs text-zinc-600">
         Use ← → to step through the game
       </p>
     </div>
