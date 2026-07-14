@@ -14,7 +14,7 @@ export const profile = {
 export const works = [
   {
     title:
-      "The Court's Wrong Reason: An Investigation of Langton's Illocutionary Account and the Limits of R v Butler and the Obligation of the Law to Prevent Harm",
+      "The Court's Wrong Reason: An Investigation of Langton's Illocutionary Account, the Limits of R v Butler, and the Obligation of the Law to Prevent Harm",
     description:
       "An analysis of R v Butler, arguing that the Supreme Court of Canada's obscenity ruling rests on an unstable philosophical foundation, and that Rae Langton's account of pornography as an illocutionary act of subordination supplies the principled basis the Court's reasoning lacked.",
     href: "/phl271-long-essay.pdf",
