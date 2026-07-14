@@ -11,6 +11,54 @@ export const profile = {
   resumeUrl: "/alexander-maanavi-resume.pdf",
 };
 
+export const famousGames = [
+  {
+    white: "Garry Kasparov",
+    whiteRating: 2851,
+    black: "Veselin Topalov",
+    blackRating: 2690,
+    date: "1999",
+    tournament: "Hoogovens",
+    fen: "b2r3r/k4p1p/p2q1np1/Np1P4/3p1Q2/P4PPB/1PP4P/1K2R3 w - - 0 25",
+  },
+  {
+    white: "Vincent Keymer",
+    whiteRating: 2491,
+    black: "Boris Gelfand",
+    blackRating: 2701,
+    date: "Oct 2018",
+    tournament: "Isle of Man Masters",
+    fen: "3r2k1/p1b2p1p/4qnp1/8/N3P3/3QBPPP/1P1R1K2/8 b - - 0 1",
+  },
+  {
+    white: "Ernesto Inarkiev",
+    whiteRating: 2690,
+    black: "Daniil Dubov",
+    blackRating: 2691,
+    date: "Aug 2018",
+    tournament: "Russian Championship Superfinal",
+    fen: "2q3k1/1p4bp/p2p2p1/P1nP1p2/2p1r3/r3PP1P/QP1BB1P1/1R1R2K1 b - - 0 1",
+  },
+  {
+    white: "Daniil Dubov",
+    whiteRating: 2699,
+    black: "Sergey Karjakin",
+    blackRating: 2752,
+    date: "May 2020",
+    tournament: "Russian Championship Superfinal",
+    fen: "r3qrk1/1pp2pp1/3PbBnp/8/pPB5/2pQ1N2/P2R1K2/R7 b - - 0 1",
+  },
+  {
+    white: "Ding Liren",
+    whiteRating: 2734,
+    black: "Yihan Meng",
+    blackRating: 2483,
+    date: "April 2022",
+    tournament: "Chinese Team Championship",
+    fen: "3rrk2/1pn3R1/1pn5/2p5/1P3P1p/P3Pq2/B1Q1NPK1/R2R4 w - - 0 1",
+  },
+];
+
 export const works = [
   {
     title:
