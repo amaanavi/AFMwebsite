@@ -10,6 +10,7 @@ import {
   works,
 } from "@/data/resume";
 import InteractiveChessBoard from "@/components/InteractiveChessBoard";
+import PortfolioHero from "@/components/ui/portfolio-hero";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -19,54 +20,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   );
 }
 
-function initials(name: string) {
-  return name
-    .split(" ")
-    .map((part) => part[0])
-    .join("");
-}
-
 export default function Home() {
   return (
-    <div className="flex flex-1 justify-center bg-white px-6 font-sans sm:px-10">
+    <>
+      <PortfolioHero />
+      <div className="flex flex-1 justify-center bg-white px-6 font-sans sm:px-10">
       <main className="w-full max-w-5xl py-20">
-        <section className="mb-28 flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-          <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-zinc-900 text-2xl font-semibold text-white">
-            {initials(profile.name)}
-          </div>
-          <div>
-            <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl">
-              Hi, I&apos;m {profile.name.split(" ")[0]} 👋
-            </h1>
-            <p className="mt-3 max-w-xl text-lg leading-7 text-zinc-600">
-              {profile.tagline}
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-3">
-              <a
-                href={`mailto:${profile.email}`}
-                className="rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700"
-              >
-                Say hello
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
-              >
-                LinkedIn
-              </a>
-              <a
-                href={profile.resumeUrl}
-                download
-                className="rounded-full border border-zinc-300 px-5 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:border-zinc-900 hover:text-zinc-900"
-              >
-                Resume
-              </a>
-            </div>
-          </div>
-        </section>
-
         <section id="about" className="mb-24 scroll-mt-24">
           <SectionLabel>About</SectionLabel>
           <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-700">
@@ -264,5 +223,6 @@ export default function Home() {
         </footer>
       </main>
     </div>
+    </>
   );
 }
