@@ -251,10 +251,13 @@ export default function PortfolioHero() {
 
             {/* Profile Monogram */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <div className="w-[65px] h-[110px] sm:w-[90px] sm:h-[152px] md:w-[110px] md:h-[185px] lg:w-[129px] lg:h-[218px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer flex items-center justify-center bg-zinc-900 border-4 border-black">
-                <span className="text-2xl md:text-3xl font-bold text-white">
-                  AM
-                </span>
+              <div className="w-[65px] h-[110px] sm:w-[90px] sm:h-[152px] md:w-[110px] md:h-[185px] lg:w-[129px] lg:h-[218px] rounded-full overflow-hidden shadow-2xl transition-transform duration-300 hover:scale-110 cursor-pointer">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/headshot.jpg"
+                  alt="Alexander Maanavi"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
