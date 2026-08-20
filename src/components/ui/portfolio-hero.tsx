@@ -273,20 +273,6 @@ export default function PortfolioHero() {
           </div>
         </div>
 
-        {/* Tagline - Proper Distance Below Hero */}
-        <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6">
-          <div className="flex justify-center">
-            <BlurText
-              text="Quantitative thinking, applied broadly."
-              delay={150}
-              animateBy="words"
-              direction="top"
-              className="text-[15px] sm:text-[18px] md:text-[20px] lg:text-[22px] text-center transition-colors duration-300 text-neutral-500 hover:text-black dark:hover:text-white"
-              style={{ fontFamily: "'Antic', sans-serif" }}
-            />
-          </div>
-        </div>
-
         {/* Scroll Indicator */}
         <a
           href="#about"

@@ -55,21 +55,6 @@ export default function Home() {
                   </span>
                 </a>
               ))}
-              <div className="rounded-2xl border border-zinc-800 p-6">
-                <h3 className="text-base font-semibold text-zinc-50">
-                  Play a Master Game
-                </h3>
-                <p className="mt-2 text-sm leading-6 text-zinc-400">
-                  A random famous chess game loads below — step through the
-                  moves yourself, or move the pieces however you like.
-                </p>
-                <a
-                  href="#travel"
-                  className="mt-4 inline-block text-sm font-medium text-zinc-50 underline underline-offset-4"
-                >
-                  Jump to board →
-                </a>
-              </div>
             </div>
           </section>
 

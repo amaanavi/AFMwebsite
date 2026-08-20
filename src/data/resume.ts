@@ -211,6 +211,13 @@ export const works = [
       "An analysis of R v Butler, arguing that the Supreme Court of Canada's obscenity ruling rests on an unstable philosophical foundation, and that Rae Langton's account of pornography as an illocutionary act of subordination supplies the principled basis the Court's reasoning lacked.",
     href: "/phl271-long-essay.pdf",
   },
+  {
+    title:
+      "Rules Without Principles: Dworkin, VAR, and FIFA's Obligation to Consistency",
+    description:
+      "Using England's controversial 2026 World Cup quarterfinal penalty reversal against Norway as a case study, this essay applies Ronald Dworkin's legal philosophy to argue that VAR exposes soccer's officiating as a system of discretionary rulings rather than principled ones, and that FIFA has an obligation to make its application of the laws of the game consistent.",
+    href: "/var-consistency-essay.pdf",
+  },
 ];
 
 export const education = [

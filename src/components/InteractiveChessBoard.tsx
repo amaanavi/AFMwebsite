@@ -86,12 +86,17 @@ export default function InteractiveChessBoard() {
   const [lastMove, setLastMove] = useState<LastMove>(null);
 
   useEffect(() => {
-    const randomGame =
-      famousGames[Math.floor(Math.random() * famousGames.length)];
-    setGameInfo(randomGame);
-    setReplayPly(randomGame.startPly);
+    loadRandomGame();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  function loadRandomGame() {
+    const choices = famousGames.filter((g) => g !== gameInfo);
+    const pool = choices.length > 0 ? choices : famousGames;
+    const randomGame = pool[Math.floor(Math.random() * pool.length)];
+    setGameInfo(randomGame);
+    setReplayPly(randomGame.startPly);
+  }
 
   useEffect(() => {
     game.reset();
@@ -170,7 +175,28 @@ export default function InteractiveChessBoard() {
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="relative flex flex-col items-center">
+      <button
+        onClick={loadRandomGame}
+        aria-label="Load a different game"
+        title="Load a different game"
+        className="absolute top-0 right-0 rounded-full border border-zinc-700 p-2 text-zinc-300 transition-colors hover:border-white hover:text-white"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-4 w-4"
+        >
+          <path d="M21 12a9 9 0 1 1-2.64-6.36" />
+          <path d="M21 3v6h-6" />
+        </svg>
+      </button>
+
       <div className="mb-4 text-center">
         <p className="text-sm font-semibold text-zinc-50">
           {gameInfo.white} ({gameInfo.whiteRating}) vs. {gameInfo.black} (
