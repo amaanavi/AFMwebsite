@@ -86,11 +86,23 @@ const menuItems = [
 export default function PortfolioHero() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [signatureOpacity, setSignatureOpacity] = useState(1);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.add("dark");
+  }, []);
+
+  useEffect(() => {
+    const fadeDistance = 250;
+    function handleScroll() {
+      const opacity = Math.max(0, 1 - window.scrollY / fadeDistance);
+      setSignatureOpacity(opacity);
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -193,10 +205,12 @@ export default function PortfolioHero() {
 
           {/* Signature */}
           <div
-            className="text-4xl"
+            className="text-4xl pointer-events-none"
             style={{
               color: isDark ? "hsl(0 0% 100%)" : "hsl(0 0% 10%)",
               fontFamily: "'Brush Script MT', 'Lucida Handwriting', cursive",
+              opacity: signatureOpacity,
+              transition: "opacity 0.1s linear",
             }}
           >
             A
