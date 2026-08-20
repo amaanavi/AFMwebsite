@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alexander Maanavi",
+  title: "Alexander Francois Maanavi",
   description:
     "Mathematics & Philosophy student focused on entrepreneurship, venture building, investments, and quantitative strategy.",
 };
