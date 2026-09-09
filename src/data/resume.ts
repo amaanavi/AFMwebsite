@@ -246,7 +246,7 @@ export const experience = [
     period: "05/2026 – 08/2026",
     bullets: [
       "Built 3 AI products end-to-end across business strategy and consulting, consumer social, and financial analysis and underwriting; 1 spun out into standalone companies (getdemando.com).",
-      "Authored business plans for 20+ accelerator startups and pitched 4 companies to the Managing Partner and VC team.",
+      "Authored business plans for multiple accelerator startups and supported research on 40+ portfolio companies and target investments.",
       "Architected and maintained the firm's internal AI infrastructure including firm-wide context systems and full-stack deployment, and partnered with the Ascend family office team under the CIO to ship secure client tooling including internal-to-external encrypted data transfer, investment analysis portals, and private messaging.",
       "Reported directly to senior partner.",
     ],
