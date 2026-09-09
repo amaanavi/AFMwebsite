@@ -11,6 +11,7 @@ import {
 } from "@/data/resume";
 import InteractiveChessBoard from "@/components/InteractiveChessBoard";
 import PortfolioHero from "@/components/ui/portfolio-hero";
+import TravelGallery from "@/components/TravelGallery";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -159,27 +160,8 @@ export default function Home() {
 
           <section id="travel" className="mb-24 scroll-mt-24">
             <SectionLabel>Travel</SectionLabel>
-            <div className="mt-6 columns-2 gap-4 sm:columns-4">
-              {travelPhotos.map((photo) => (
-                <div
-                  key={photo.src}
-                  className="relative mb-4 break-inside-avoid"
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    className="w-full rounded-2xl"
-                  />
-                  {photo.location && (
-                    <div className="pointer-events-none absolute inset-x-0 top-0 rounded-t-2xl bg-gradient-to-b from-black/50 to-transparent p-3">
-                      <p className="text-xs font-medium text-white/70">
-                        {photo.location}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
+            <div className="mt-6">
+              <TravelGallery photos={travelPhotos} />
             </div>
 
             <div className="mt-14">
