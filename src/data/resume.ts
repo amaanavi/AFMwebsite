@@ -127,6 +127,11 @@ export const travelPhotos = [
     location: "Deira, Dubai, UAE",
   },
   {
+    src: "/travel/travel-19.jpg",
+    alt: "Nighttime portrait near a roundabout with flags and palm trees",
+    location: "L'Hivernage, Marrakech, Morocco",
+  },
+  {
     src: "/travel/travel-04.jpg",
     alt: "Wall of framed art prints and photography",
     location: "South Hampton, NY, USA",
@@ -145,6 +150,11 @@ export const travelPhotos = [
     src: "/travel/travel-07.jpg",
     alt: "Swimmers watching the sunset over the water",
     location: "Jumeirah, Dubai, UAE",
+  },
+  {
+    src: "/travel/travel-20.jpg",
+    alt: "Crouching down to greet an orange cat on a tiled floor",
+    location: "Bahia Palace, Marrakech, Morocco",
   },
   {
     src: "/travel/travel-08.jpg",
@@ -167,6 +177,11 @@ export const travelPhotos = [
     location: "Munich, Bavaria, Germany",
   },
   {
+    src: "/travel/travel-21.jpg",
+    alt: "Wall covered in colorful hand-painted souvenir plaques",
+    location: "Taghazout, Morocco",
+  },
+  {
     src: "/travel/travel-12.jpg",
     alt: "Sitting above a geothermal valley in Iceland",
     location: "Thingvellir, Iceland",
@@ -182,6 +197,11 @@ export const travelPhotos = [
     location: "Deshaies, Guadeloupe",
   },
   {
+    src: "/travel/travel-22.jpg",
+    alt: "Two silhouettes walking along a beach dune at dusk",
+    location: "Sahara Desert, Western Sahara",
+  },
+  {
     src: "/travel/travel-15.jpg",
     alt: "Bougainvillea flowers climbing a staircase railing",
     location: "Deira, Dubai, UAE",
@@ -190,6 +210,11 @@ export const travelPhotos = [
     src: "/travel/travel-16.jpg",
     alt: "Examining a placard next to a jet on display",
     location: "New York City, NY, USA",
+  },
+  {
+    src: "/travel/travel-23.jpg",
+    alt: "Market stall archway hung with leather bags",
+    location: "Agadir, Morocco",
   },
   {
     src: "/travel/travel-17.jpg",
