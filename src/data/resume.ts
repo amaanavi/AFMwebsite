@@ -243,8 +243,13 @@ export const experience = [
     org: "Interplay",
     role: "Intern, Operations and AI, Studio",
     location: "New York, NY",
-    period: "05/2026 – Present",
-    bullets: [] as string[],
+    period: "05/2026 – 08/2026",
+    bullets: [
+      "Built 4 AI products end-to-end across business strategy and consulting, consumer social, and financial analysis and underwriting; 2 spun out into standalone companies (ivy.one, getdemando.com).",
+      "Authored business plans for 20+ accelerator startups and pitched 4 companies to the Managing Partner and VC team.",
+      "Architected and maintained the firm's internal AI infrastructure including firm-wide context systems and full-stack deployment, and partnered with the Ascend family office team under the CIO to ship secure client tooling including internal-to-external encrypted data transfer, investment analysis portals, and private messaging.",
+      "Reported directly to senior partner.",
+    ],
   },
   {
     org: "EgaTree",
