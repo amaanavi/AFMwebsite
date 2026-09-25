@@ -43,13 +43,13 @@ export default function AboutSection() {
 
           <div className="overflow-hidden rounded-xl shadow-lg">
             <img
-              src="/travel/travel-12.jpg"
-              alt="Sitting above a geothermal valley in Iceland"
+              src="/travel/travel-17.jpg"
+              alt="Descending snowy steps at night"
               className="h-full w-full object-cover"
             />
             <div className="bg-white p-4">
               <p className="text-sm font-medium text-gray-600">
-                Thingvellir, Iceland
+                Casa Loma, Toronto, Ontario, Canada
               </p>
             </div>
           </div>
