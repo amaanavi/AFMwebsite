@@ -17,6 +17,8 @@ export default function Home() {
 
       <AboutSection />
 
+      <ExperienceTimeline />
+
       <section id="projects" className="bg-white py-16 sm:px-8">
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
@@ -45,8 +47,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <ExperienceTimeline />
 
       <section id="travel" className="bg-white py-16 sm:px-8">
         <div className="mx-auto max-w-7xl px-6">
