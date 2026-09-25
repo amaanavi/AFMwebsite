@@ -1,200 +1,69 @@
-import {
-  clubsAndAwards,
-  education,
-  experience,
-  interests,
-  languages,
-  profile,
-  skills,
-  travelPhotos,
-  works,
-} from "@/data/resume";
+import { profile, travelPhotos } from "@/data/resume";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
+import ExperienceTimeline from "@/components/ExperienceTimeline";
+import Hero from "@/components/Hero";
 import InteractiveChessBoard from "@/components/InteractiveChessBoard";
-import PortfolioHero from "@/components/ui/portfolio-hero";
+import NavBar from "@/components/NavBar";
+import ProjectsGrid from "@/components/ProjectsGrid";
+import SkillsSection from "@/components/SkillsSection";
 import TravelGallery from "@/components/TravelGallery";
-
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500">
-      {children}
-    </p>
-  );
-}
 
 export default function Home() {
   return (
     <>
-      <PortfolioHero />
-      <div className="flex flex-1 justify-center bg-white px-6 font-sans transition-colors sm:px-10 dark:bg-black">
-        <main className="w-full max-w-5xl py-20">
-          <section id="about" className="mb-24 scroll-mt-24">
-            <SectionLabel>About</SectionLabel>
-            <p className="mt-4 max-w-2xl text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-              {profile.about}
+      <NavBar />
+      <Hero />
+
+      <AboutSection />
+
+      <section id="projects" className="bg-white py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+              Featured Projects
+            </h2>
+          </div>
+          <ProjectsGrid />
+        </div>
+      </section>
+
+      <SkillsSection />
+
+      <section className="bg-gray-50 py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+              Play a Game
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Replay five historic master games — click, drag, or use arrow keys.
             </p>
-          </section>
+          </div>
+          <div className="mx-auto max-w-3xl rounded-xl bg-white p-8 shadow-lg">
+            <InteractiveChessBoard />
+          </div>
+        </div>
+      </section>
 
-          <section id="work" className="mb-24 scroll-mt-24">
-            <SectionLabel>Selected Work</SectionLabel>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              {works.map((work) => (
-                <a
-                  key={work.title}
-                  href={work.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group rounded-2xl border border-zinc-200 p-6 transition-colors hover:border-zinc-900 dark:border-zinc-800 dark:hover:border-zinc-50"
-                >
-                  <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                    {work.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                    {work.description}
-                  </p>
-                  <span className="mt-4 inline-block text-sm font-medium text-zinc-900 underline underline-offset-4 dark:text-zinc-50">
-                    Read full report →
-                  </span>
-                </a>
-              ))}
-            </div>
-          </section>
+      <ExperienceTimeline />
 
-          <section id="experience" className="mb-24 scroll-mt-24">
-            <SectionLabel>Experience</SectionLabel>
-            <div className="mt-6 flex flex-col">
-              {experience.map((job, i) => (
-                <div
-                  key={`${job.org}-${job.period}`}
-                  className={`py-6 ${i !== 0 ? "border-t border-zinc-200 dark:border-zinc-800" : ""}`}
-                >
-                  <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
-                    <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">
-                      {job.org}
-                    </h3>
-                    <span className="shrink-0 rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
-                      {job.period}
-                    </span>
-                  </div>
-                  <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                    {job.role} · {job.location}
-                  </p>
-                  {job.bullets.length > 0 && (
-                    <ul className="mt-3 list-disc space-y-1.5 pl-5 text-sm leading-6 text-zinc-700 dark:text-zinc-300">
-                      {job.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
-              ))}
-            </div>
+      <section id="travel" className="bg-white py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+              Travel
+            </h2>
+          </div>
+          <TravelGallery photos={travelPhotos} />
+        </div>
+      </section>
 
-            <div className="mt-14 grid gap-10 sm:grid-cols-2">
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-                  Education
-                </h3>
-                <div className="mt-4 flex flex-col gap-4">
-                  {education.map((item) => (
-                    <div key={item.school}>
-                      <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-                        {item.school}
-                      </p>
-                      <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                        {item.detail}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-                  My Stack
-                </h3>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+      <ContactSection />
 
-            <div className="mt-10 grid gap-10 sm:grid-cols-3">
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-                  Languages
-                </h3>
-                <ul className="mt-2 space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
-                  {languages.map((language) => (
-                    <li key={language}>{language}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-                  Clubs & Awards
-                </h3>
-                <ul className="mt-2 space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
-                  {clubsAndAwards.map((club) => (
-                    <li key={club}>{club}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
-                  Interests
-                </h3>
-                <ul className="mt-2 space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
-                  {interests.map((interest) => (
-                    <li key={interest}>{interest}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </section>
-
-          <section id="travel" className="mb-24 scroll-mt-24">
-            <SectionLabel>Travel</SectionLabel>
-            <div className="mt-6">
-              <TravelGallery photos={travelPhotos} />
-            </div>
-
-            <div className="mt-14">
-              <SectionLabel>Hobbies</SectionLabel>
-              <div className="mt-6 rounded-2xl border border-zinc-200 p-6 dark:border-zinc-800">
-                <InteractiveChessBoard />
-              </div>
-            </div>
-          </section>
-
-          <section id="resume" className="mb-14 scroll-mt-24">
-            <div className="rounded-2xl border border-zinc-200 p-8 text-center dark:border-zinc-800">
-              <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">
-                Want the full picture?
-              </h2>
-              <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Download my resume for the complete rundown.
-              </p>
-              <a
-                href={profile.resumeUrl}
-                download
-                className="mt-5 inline-block rounded-full bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-black dark:hover:bg-zinc-300"
-              >
-                Download Resume
-              </a>
-            </div>
-          </section>
-
-          <footer className="border-t border-zinc-200 pt-6 text-sm text-zinc-500 dark:border-zinc-800">
-            © {new Date().getFullYear()} {profile.name}
-          </footer>
-        </main>
-      </div>
+      <footer className="border-t border-zinc-200 bg-white py-6 text-center text-sm text-zinc-500">
+        © {new Date().getFullYear()} {profile.name}
+      </footer>
     </>
   );
 }

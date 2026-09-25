@@ -245,6 +245,39 @@ export const works = [
   },
 ];
 
+export const projects = [
+  {
+    title: "The Court's Wrong Reason",
+    description:
+      "An investigation of Langton's illocutionary account and the limits of R v Butler, arguing the Supreme Court of Canada's obscenity ruling rests on an unstable philosophical foundation.",
+    tags: ["Legal Philosophy", "Constitutional Law"],
+    status: "Completed",
+    date: "2026",
+    href: "/phl271-long-essay.pdf",
+    accent: "from-blue-500 to-cyan-400",
+  },
+  {
+    title: "Rules Without Principles",
+    description:
+      "Applies Dworkin's legal philosophy to VAR in soccer, using England's 2026 World Cup quarterfinal as a case study for FIFA's obligation to consistency.",
+    tags: ["Sports Law", "Legal Philosophy"],
+    status: "Completed",
+    date: "2026",
+    href: "/var-consistency-essay.pdf",
+    accent: "from-purple-500 to-pink-500",
+  },
+  {
+    title: "Interactive Chess Board",
+    description:
+      "A replayable chess viewer on this site featuring five historic master games, with click-and-drag moves, arrow-key navigation, and move highlighting.",
+    tags: ["React", "TypeScript", "chess.js"],
+    status: "Ongoing",
+    date: "2026",
+    href: "#skills",
+    accent: "from-green-500 to-emerald-400",
+  },
+];
+
 export const education = [
   {
     school: "University of Toronto, St. George's Campus",
