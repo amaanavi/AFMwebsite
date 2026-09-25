@@ -6,7 +6,7 @@ const icons = [FileText, FileText, Gamepad2];
 const statusColor: Record<string, string> = {
   Completed: "bg-green-100 text-green-800",
   "In Progress": "bg-yellow-100 text-yellow-800",
-  Ongoing: "bg-blue-100 text-blue-800",
+  Ongoing: "bg-purple-100 text-purple-800",
 };
 
 export default function ProjectsGrid() {
@@ -29,8 +29,8 @@ export default function ProjectsGrid() {
             <div className={`h-2 w-full bg-gradient-to-r ${project.accent}`} />
             <div className="flex flex-1 flex-col p-6">
               <div className="flex items-center justify-between">
-                <div className="rounded-lg bg-gray-50 p-3 transition-colors duration-200 group-hover:bg-blue-50">
-                  <Icon className="text-blue-600" size={32} />
+                <div className="rounded-lg bg-gray-50 p-3 transition-colors duration-200 group-hover:bg-purple-50">
+                  <Icon className="text-purple-600" size={32} />
                 </div>
                 <div className="flex items-center gap-2">
                   <span
@@ -44,7 +44,7 @@ export default function ProjectsGrid() {
                 </div>
               </div>
 
-              <h3 className="mt-4 text-xl font-bold text-gray-900 transition-colors duration-200 group-hover:text-blue-600">
+              <h3 className="mt-4 text-xl font-bold text-gray-900 transition-colors duration-200 group-hover:text-purple-600">
                 {project.title}
               </h3>
               <p className="mt-2 line-clamp-3 text-sm leading-6 text-gray-600">
@@ -69,7 +69,7 @@ export default function ProjectsGrid() {
 
               <div className="mt-auto flex items-center justify-between pt-6 text-xs text-zinc-500">
                 <span>{project.date}</span>
-                <span className="text-xs font-medium text-blue-600">
+                <span className="text-xs font-medium text-purple-600">
                   {project.href.startsWith("#") ? "Play now" : "Click to expand"}
                 </span>
               </div>

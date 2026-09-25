@@ -35,7 +35,7 @@ export default function NavBar() {
         <nav className="flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <a
             href="#"
-            className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-2xl font-bold text-transparent"
+            className="bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-2xl font-bold text-transparent"
           >
             {profile.name}
           </a>
@@ -45,7 +45,7 @@ export default function NavBar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="font-medium text-gray-700 transition-colors duration-200 hover:text-blue-600"
+                className="font-medium text-gray-700 transition-colors duration-200 hover:text-purple-600"
               >
                 {link.label}
               </a>
@@ -56,7 +56,7 @@ export default function NavBar() {
             type="button"
             onClick={() => setMenuOpen((v) => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
-            className="text-gray-700 transition-colors hover:text-blue-600 md:hidden"
+            className="text-gray-700 transition-colors hover:text-purple-600 md:hidden"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -71,7 +71,7 @@ export default function NavBar() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-blue-600"
+                className="hover:text-purple-600"
               >
                 {link.label}
               </a>

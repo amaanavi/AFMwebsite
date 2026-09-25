@@ -41,13 +41,13 @@ export default function ExperienceTimeline() {
               <div className="flex items-start space-x-4">
                 <div
                   className={`flex h-12 w-12 items-center justify-center rounded-full ${
-                    item.type === "Education" ? "bg-blue-100" : "bg-green-100"
+                    item.type === "Education" ? "bg-purple-100" : "bg-green-100"
                   }`}
                 >
                   <Briefcase
                     className={
                       item.type === "Education"
-                        ? "text-blue-600"
+                        ? "text-purple-600"
                         : "text-green-600"
                     }
                     size={20}
@@ -82,7 +82,7 @@ export default function ExperienceTimeline() {
                           key={highlight}
                           className="flex items-start text-sm text-gray-600"
                         >
-                          <span className="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
+                          <span className="mt-2 mr-3 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" />
                           {highlight}
                         </li>
                       ))}

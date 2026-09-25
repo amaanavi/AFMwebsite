@@ -1,15 +1,16 @@
-import { FileText, Link, Mail, MapPin } from "lucide-react";
+import { FileText, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/resume";
+import LinkedInIcon from "@/components/icons/LinkedInIcon";
 
 const info = [
   {
-    icon: <Mail className="text-blue-600" size={24} />,
+    icon: <Mail className="text-purple-600" size={24} />,
     title: "Email",
     value: profile.email,
     link: `mailto:${profile.email}`,
   },
   {
-    icon: <MapPin className="text-blue-600" size={24} />,
+    icon: <MapPin className="text-purple-600" size={24} />,
     title: "Location",
     value: profile.location,
     link: null,
@@ -19,9 +20,9 @@ const info = [
 const socials = [
   {
     name: "LinkedIn",
-    icon: <Link size={24} />,
+    icon: <LinkedInIcon className="h-6 w-6" />,
     url: profile.linkedin,
-    color: "hover:text-blue-600",
+    color: "hover:text-purple-600",
   },
   {
     name: "Resume",
@@ -48,7 +49,7 @@ export default function ContactSection() {
           {info.map((item) => {
             const content = (
               <div className="flex items-center rounded-xl bg-gray-50 p-6 shadow-sm transition-shadow duration-200 hover:shadow-md">
-                <div className="mr-4 rounded-lg bg-blue-100 p-3">
+                <div className="mr-4 rounded-lg bg-purple-100 p-3">
                   {item.icon}
                 </div>
                 <div>

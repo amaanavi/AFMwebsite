@@ -34,7 +34,7 @@ export default function Typewriter({ words }: { words: string[] }) {
   return (
     <span>
       {text}
-      <span className="animate-pulse text-blue-400">|</span>
+      <span className="animate-pulse text-purple-400">|</span>
     </span>
   );
 }

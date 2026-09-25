@@ -52,7 +52,7 @@ function MoveList({
                 <td
                   className={`py-1.5 ${
                     whitePly === currentPly
-                      ? "bg-blue-100 font-semibold text-blue-900"
+                      ? "bg-purple-100 font-semibold text-purple-900"
                       : "text-zinc-700"
                   }`}
                 >
@@ -61,7 +61,7 @@ function MoveList({
                 <td
                   className={`py-1.5 pr-3 ${
                     blackPly === currentPly
-                      ? "bg-blue-100 font-semibold text-blue-900"
+                      ? "bg-purple-100 font-semibold text-purple-900"
                       : "text-zinc-700"
                   }`}
                 >

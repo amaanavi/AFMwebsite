@@ -33,7 +33,7 @@ export default function AboutSection() {
               {profile.traits.map((trait) => (
                 <span
                   key={trait}
-                  className="rounded-full bg-blue-100 px-4 py-2 text-sm font-medium text-blue-800"
+                  className="rounded-full bg-purple-100 px-4 py-2 text-sm font-medium text-purple-800"
                 >
                   {trait}
                 </span>

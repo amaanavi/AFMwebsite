@@ -276,6 +276,26 @@ export const projects = [
     href: "#skills",
     accent: "from-green-500 to-emerald-400",
   },
+  {
+    title: "The Reception Project",
+    description:
+      "An interactive exploration of the reception of Homer's Odyssey, tracing how the epic has been read, adapted, and reinterpreted across history.",
+    tags: ["Next.js", "TypeScript"],
+    status: "Ongoing",
+    date: "2026",
+    href: "https://receptionproject.vercel.app/",
+    accent: "from-amber-500 to-orange-400",
+  },
+  {
+    title: "64Squares",
+    description:
+      "A chess web app for playing, analyzing, and reviewing games in the browser.",
+    tags: ["React", "TypeScript", "chess.js"],
+    status: "Ongoing",
+    date: "2026",
+    href: "https://64-squares-nine.vercel.app/",
+    accent: "from-purple-500 to-indigo-400",
+  },
 ];
 
 export const education = [
@@ -297,6 +317,13 @@ export const education = [
 ];
 
 export const experience = [
+  {
+    org: "Stealth AI",
+    role: "Founding Team",
+    location: "New York, NY",
+    period: "2026 – Present",
+    bullets: [],
+  },
   {
     org: "Interplay",
     role: "Intern, Operations and AI, Studio",

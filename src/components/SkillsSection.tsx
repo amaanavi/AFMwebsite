@@ -19,7 +19,7 @@ export default function SkillsSection() {
         <div className="grid gap-12 lg:grid-cols-2">
           <div className="rounded-xl bg-white p-8 shadow-lg">
             <div className="mb-6 flex items-center">
-              <Award className="mr-3 text-blue-600" size={28} />
+              <Award className="mr-3 text-purple-600" size={28} />
               <h3 className="text-2xl font-bold text-gray-900">
                 Core Skills
               </h3>
@@ -28,17 +28,17 @@ export default function SkillsSection() {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-lg bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-blue-50"
+                  className="rounded-lg bg-gray-50 px-4 py-2 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-purple-50"
                 >
                   {skill}
                 </span>
               ))}
             </div>
 
-            <div className="mt-6 rounded-lg bg-blue-50 p-4">
+            <div className="mt-6 rounded-lg bg-purple-50 p-4">
               <div className="flex items-center">
-                <Users className="mr-2 text-blue-600" size={20} />
-                <span className="text-sm font-medium text-blue-800">
+                <Users className="mr-2 text-purple-600" size={20} />
+                <span className="text-sm font-medium text-purple-800">
                   Languages: {languages.join(" · ")}
                 </span>
               </div>
@@ -48,7 +48,7 @@ export default function SkillsSection() {
           <div className="space-y-8">
             <div className="rounded-xl bg-white p-8 shadow-lg">
               <div className="mb-6 flex items-center">
-                <Award className="mr-3 text-blue-600" size={28} />
+                <Award className="mr-3 text-purple-600" size={28} />
                 <h3 className="text-2xl font-bold text-gray-900">
                   Clubs & Awards
                 </h3>
@@ -59,7 +59,7 @@ export default function SkillsSection() {
                     key={item}
                     className="flex items-start space-x-4 rounded-lg bg-gray-50 p-4"
                   >
-                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-blue-500" />
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-purple-500" />
                     <p className="text-sm text-gray-700">{item}</p>
                   </div>
                 ))}
@@ -68,7 +68,7 @@ export default function SkillsSection() {
 
             <div className="rounded-xl bg-white p-8 shadow-lg">
               <div className="mb-4 flex items-center">
-                <Users className="mr-3 text-blue-600" size={28} />
+                <Users className="mr-3 text-purple-600" size={28} />
                 <h3 className="text-2xl font-bold text-gray-900">
                   Interests
                 </h3>
